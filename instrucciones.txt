@@ -99,6 +99,19 @@ git switch main -> volvemos a la rama main y vemos que el h1 vuelve a aparecer
 30.
 git log -> ver que estamos en la rama master y aparecen sus commits
 
+31. 
+git merge rama2 -> unimos las ramas y nos pide elegir dado que hay un conflicto porque en la misma linea de las cada rama hay diferente contenido
+git commit -m "Merge que ha generado conflictos"
+
+32. 
+git switch rama2 -> cambiar a la rama2
+git branch rama3 -> crear rama3
+Añadir dos h1
+git add .
+git commit -m "Dos líneas en rama3"
+git switch rama2 -> cambiar a rama2
+git merge rama3 -> unir los cambios de la rama3 a la rama2
+
 31.
 Para subir el repositorio a Github:
     1. Crear nuevo repositorio en Github
