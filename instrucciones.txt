@@ -1,0 +1,108 @@
+1. instalar git
+
+2. verificar instalación abriendo la consola -> git --version
+
+3.
+git config --global user.name "Sergio Gómez García" (si hay espacios es necesario usar comillas, sino no)
+git config --global user.email sergio.gomez.garcia@doc.medac.es (aquí por ejemplo no hacen falta comillas)
+
+4.
+crear carpeta con un documento html (gitPrueba.html), escribir estructura html Y GUARDAR LOS CAMBIOS -> escribir cmd en la barra de búsqueda del explorador de carpetas estando dentro de la carpeta creada
+crear readme -> echo documentación >> README.md (md significa Markdown, que es un lenguaje muy simple para dar formato al texto usando símbolos como #, ##, -, etc) 
+
+5.
+get init -> crea el repositorio (aparece en elementos ocultos)
+
+6.
+git status -> nos dice que debemos añadir el gitPrueba.html con el comando git add al conjunto de archivos sobre los cuales queremos generar commits, es decir, versiones
+
+7.
+git add . -> se incluyen todos los archivos
+git add gitPrueba.html -> se incluye solo dicho archivo
+
+8.
+git status -> nos dice que hay cambios que subir del archivo gitPrueba.html
+
+9.
+git commit -m "Primer commit de la rama master" -> genera una version, que se identifica por el mensaje añadido, con los cambios realizados. Veremos que nos dice como hay 9 inserciones, las 9 lineas añadidas a gitPrueba.html de la estructura html
+
+10.
+git status -> no hay nada que guardar, todo está actualizado
+
+11.
+Añadimos un h1 al body del html "Estamos en la rama master"
+
+12.
+git add . o git add gitPrueba.html
+
+13.
+git commit -m "Segundo commit de la rama master"
+
+14.
+git log -> visualizar historial de commits
+
+15.
+git branch -> visualizar las ramas
+master es la rama principal
+git branch -M main -> modifica el nombre de la rama a main
+
+16.
+Para volver a la primera versión que guardamos, es decir, al primer commit:
+    1. Copiar código del primer commit
+    2. git checkout + código del primer commit
+    3. Ver que el código ha cambiado a su primera versión en la que no había h1
+
+17.
+git log -> únicamente aparece HEAD y el primer commit, sin main, porque se ha creado una rama, ya no estamos en la principal
+
+18.
+git branch -> visualizar las ramas ver que estamos en una rama secundaria temporal (no creada ni guardada)
+
+19.
+git switch main -> volver a la rama principal y vemos que el h1 vuelve a aparecer
+
+20.
+git log -> ver que estamos de nuevo en la rama principal
+
+21.
+git branch -> visualizar la única rama, la main
+
+21.
+Para volver a la primera versión que guardamos, es decir, al primer commit Y MODIFICARLO:
+    1. Copiar código del primer commit
+    2. git checkout + código del primer commit
+    3. Ver que el código ha cambiado a su primera versión en la que no había h1
+
+23.
+Añadir un p al body del html "Hemos vuelto al primer commit"
+
+24.
+git add . o git add gitPrueba.html 
+
+25.
+git commit -m "Primer commit de la rama secundaria"
+
+26.
+git branch nombreRama -> crea una rama guardando en ella los cambios hemos modificado de la primera versión de la rama main
+git switch nombreRama -> cambia a una rama 
+git switch -c rama2 -> se crea y cambia a una rama guardando en ella los cambios hemos modificado de la primera versión de la rama main
+
+27.
+git log -> vemos que estamos en la rama2 y aparecen sus commits
+
+28.
+git branch -> visualizar las ramas
+
+29.
+git switch main -> volvemos a la rama main y vemos que el h1 vuelve a aparecer 
+
+30.
+git log -> ver que estamos en la rama master y aparecen sus commits
+
+31.
+Para subir el repositorio a Github:
+    1. Crear nuevo repositorio en Github
+    2. git remote add origin https://github.com/SergioDavante/prueba1.git
+        - sirve para conectar tu repositorio local con un repositorio remoto
+        - origin es un alias que representará el URL del repositorio. De esta manera más adelante más adelante nos ahorrariamos hacer git push https://github.com/SergioDavante/prueba1.git main y sería suficiente con git push origin main
+    3. git push origin main
