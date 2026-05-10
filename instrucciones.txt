@@ -106,16 +106,17 @@ git commit -m "Merge que ha generado conflictos"
 32. 
 git switch rama2 -> cambiar a la rama2
 git branch rama3 -> crear rama3
+git switch rama3 -> cambiar a la rama3
 Añadir dos h1
 git add .
 git commit -m "Dos líneas en rama3"
 git switch rama2 -> cambiar a rama2
 git merge rama3 -> unir los cambios de la rama3 a la rama2
 
-31.
+33.
 Para subir el repositorio a Github:
     1. Crear nuevo repositorio en Github
     2. git remote add origin https://github.com/SergioDavante/prueba1.git
         - sirve para conectar tu repositorio local con un repositorio remoto
         - origin es un alias que representará el URL del repositorio. De esta manera más adelante más adelante nos ahorrariamos hacer git push https://github.com/SergioDavante/prueba1.git main y sería suficiente con git push origin main
-    3. git push origin main
+    3. git push origin main -> sube los commits que hemos realizado en la rama main
